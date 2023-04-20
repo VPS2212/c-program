@@ -1,0 +1,62 @@
+#include<stdio.h>
+#define size 10
+int main()
+{
+        int ar[size];
+        int i,j,temp;
+	int ch,bs;
+printf("Select 1 For Desending order Ouput\n");
+printf("Select 2 For Ascending Order Output\n");
+scanf("%d",&ch);
+if(ch>2)
+{
+ printf("wrong choice\n");
+}
+else
+{
+	for(i=0;i<size;i++)
+	{
+		scanf(" %d",&ar[i]);
+	}
+	printf("\n*******************\n Input:\n:");
+	for(i=0;i<size;i++)
+	{
+		printf(" %d\t",ar[i]);
+	}
+        for(i=0;i<size;i++)
+        {
+	//	printf("loop i: %d\n",ar[i]);
+                for(j=i+1;j<size;j++)
+                {
+	//		printf("Loop j: %d\n",ar[j]);
+                        if(ar[i]<ar[j])
+                        {	
+				temp=ar[i];
+				ar[i]=ar[j];
+				ar[j]=temp;
+			}
+		}
+	}
+}
+	printf("\n*********************\n");
+	switch (ch)
+	{
+		case 1:
+	printf("\nOutput Mode-Descending Order:\n");
+	for(i=0;i<size;i++)
+	{
+        printf("%d\t",ar[i]);
+	}
+	break;
+		case 2:
+	printf("\nOuptur Mode-Ascending Order:\n");
+	for(i=size-1;i>=0;i--)
+	{
+	printf("%d\t",ar[i]);
+	}
+	break;
+	}
+return 0;
+}
+
+
